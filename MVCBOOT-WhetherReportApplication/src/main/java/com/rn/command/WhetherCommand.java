@@ -3,10 +3,10 @@ package com.rn.command;
 public class WhetherCommand {
 	
 	private String city="nagpur";
-	private double temp;
+	private int temp;
 	private String skyInfo;
-	private double temp_min;
-	private double temp_max;
+	private int temp_min;
+	private int temp_max;
 	private String humidity;
 	
 	public String getCity() {
@@ -15,10 +15,10 @@ public class WhetherCommand {
 	public void setCity(String city) {
 		this.city = city;
 	}
-	public double getTemp() {
+	public int getTemp() {
 		return temp;
 	}
-	public void setTemp(double temp) {
+	public void setTemp(int temp) {
 		this.temp = temp;
 	}
 	public String getSkyInfo() {
@@ -30,13 +30,13 @@ public class WhetherCommand {
 	public double getTemp_min() {
 		return temp_min;
 	}
-	public void setTemp_min(double temp_min) {
+	public void setTemp_min(int temp_min) {
 		this.temp_min = temp_min;
 	}
-	public double getTemp_max() {
+	public int getTemp_max() {
 		return temp_max;
 	}
-	public void setTemp_max(double temp_max) {
+	public void setTemp_max(int temp_max) {
 		this.temp_max = temp_max;
 	}
 	public String getHumidity() {
