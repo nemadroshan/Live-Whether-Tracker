@@ -1,7 +1,9 @@
 package com.rn.controller;
 
+import java.util.Iterator;
 import java.util.Map;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -26,7 +28,7 @@ public class WhetherController {
 
 	@Value("${weather.api.key}")
 	private String api_key;
-
+	
 	@GetMapping("/report.htm")
 	public String getReportPage(@ModelAttribute("watCmd") WhetherCommand cmd) {
 		return "report";
@@ -48,11 +50,8 @@ public class WhetherController {
 
 		try {
 			jsonObject = (JSONObject) parser.parse(data);
-			// JSONObject weather[]
-			// =(JSONObject)parser.parse(jsonObject.get("weather").toString());
 			JSONObject main = (JSONObject) parser.parse(jsonObject.get("main").toString());
 
-			// cmd.setSkyInfo(weather.get("description").toString());
 			cmd.setHumidity(main.get("humidity").toString());
 			double temp = Double.parseDouble(main.get("temp").toString()) - 273.15;
 			double min = Double.parseDouble(main.get("temp_min").toString()) - 273.15;
@@ -61,7 +60,13 @@ public class WhetherController {
 			cmd.setTemp((int) Math.round(temp));
 			cmd.setTemp_max((int) Math.round(max));
 			cmd.setTemp_min((int) Math.round(min));
-
+			
+			JSONArray  jsonArray = (JSONArray) jsonObject.get("weather");
+			Iterator i = jsonArray.iterator();
+			while(i.hasNext()) {
+				JSONObject object = (JSONObject) i.next();
+			cmd.setDesc(object.get("description").toString());
+			}
 			map.put("cmd", cmd);
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block

@@ -8,7 +8,7 @@ public class WhetherCommand {
 	private int temp_min;
 	private int temp_max;
 	private String humidity;
-	
+	private String desc;
 	public String getCity() {
 		return city;
 	}
@@ -44,6 +44,12 @@ public class WhetherCommand {
 	}
 	public void setHumidity(String humidity) {
 		this.humidity = humidity;
+	}
+	public String getDesc() {
+		return desc;
+	}
+	public void setDesc(String desc) {
+		this.desc = desc;
 	}
 	
 	
