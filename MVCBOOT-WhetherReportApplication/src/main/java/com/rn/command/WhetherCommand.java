@@ -2,12 +2,12 @@ package com.rn.command;
 
 public class WhetherCommand {
 	
-	private String city="nagpur";
-	private int temp;
+	private String city="Nagpur";
+	private int temp=0;
 	private String skyInfo;
-	private int temp_min;
-	private int temp_max;
-	private String humidity;
+	private int temp_min=0;
+	private int temp_max=0;
+	private String humidity="0";
 	private String desc;
 	public String getCity() {
 		return city;
