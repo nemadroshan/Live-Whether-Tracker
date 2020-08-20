@@ -1,3 +1,12 @@
-# WhetherReportApplication
-# developed using SpringBoot , restapi and OpenWeatherApi
-#get your api key this link :https://openweathermap.org/api
+# Live Weather Tracker
+
+
+
+#Requirements
+* java
+* Spring Boot
+* Tomcat 9.0
+* Jstl
+
+# Live Data Comes from 
+ * https://openweathermap.org/api
